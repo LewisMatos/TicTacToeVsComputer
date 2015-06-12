@@ -3,7 +3,7 @@
     var col = 4;
 // Global Variables to keep track of players
     var playerOne = "playerOne";
-    var playerTwo = "playerTwo";
+    var playerTwo = "Computer";
 //Using new Image object to preload images for the board. Images are being hosted off my dropbox
     var X = new Image(); 
     var O = new Image(); 
@@ -76,8 +76,9 @@ function playerTurn(){
                     if(id == board[i][j]){
                         if(turn == "X" && document.getElementById(board[i][j]).innerHTML == ""){
                              document.getElementById(board[i][j]).innerHTML = "<img src =" + X.src + ">";
-                            document.getElementById("playerName").innerHTML = playerTwo + " turn";
+                           // document.getElementById("playerName").innerHTML = playerOne + " turn";
                             turn = "O";
+                            checkWinner(playerOne);
                             for(var x = 1; x < board.length; x++){
                                 for(z = 1; z < board.length; z++){ 
                                     if (document.getElementById(board[x][z]).innerHTML == "") {
@@ -86,10 +87,10 @@ function playerTurn(){
                             }
                         }
                         clickBox(random[Math.floor(Math.random()*random.length)]);
-                            checkWinner(playerOne);
+                            
                         }else if(turn == "O"){
                             document.getElementById(id).innerHTML = "<img src =" + O.src + ">";
-                            document.getElementById("playerName").innerHTML = playerTwo + " turn";
+                            document.getElementById("playerName").innerHTML = playerOne + " turn";
                             turn = "X";
                             checkWinner(playerTwo);
                         }  
