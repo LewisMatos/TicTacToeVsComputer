@@ -89,7 +89,7 @@ function playerTurn(){
                             checkWinner(playerOne);
                         }else if(turn == "O"){
                             document.getElementById(id).innerHTML = "<img src =" + O.src + ">";
-                            document.getElementById("playerName").innerHTML = playerOne + " turn";
+                            document.getElementById("playerName").innerHTML = playerTwo + " turn";
                             turn = "X";
                             checkWinner(playerTwo);
                         }  
